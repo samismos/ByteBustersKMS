@@ -11,16 +11,18 @@
 }
 
 .faq-section {
-  background-color: #3d08c2; /* purple */
   background-image: radial-gradient(#260579,#3d08c2);
   border: solid 2px white;
   color: #fff;
+}
+.faq-section:hover {
+  background-image: radial-gradient(#1f0560, #300894);
 }
 
 .faq-question {
   cursor: pointer;
   padding: 20px;
-  font-weight: 650;
+  font-weight: 600;
 }
 
 .faq-answer {
