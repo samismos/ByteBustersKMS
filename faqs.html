@@ -85,12 +85,34 @@
                <h1>What is the goal of our company?</h1>
             </div>
          </div>
-         <div id="content">
-            <div class="line">
-               <p class="s-12 m-12 l-8 center">Our company specializes in helping individuals and businesses build their own computers. We provide a wide range of high-quality components and expert guidance to ensure that your custom-built computer meets your specific needs and budget. Our team of experienced technicians and engineers are available to help you every step of the way, from selecting the right components to assembling and setting up your new machine.
-               </p>
-               <h2>Why do we advocate for building your own computer?</h2>
-               <p class="s-12 m-12 l-8 center">Building your own computer has many advantages over buying a pre-built one. For one, building your own computer allows you to choose the exact components you want and need, resulting in a machine that is tailored to your specific needs and budget. Additionally, building your own computer can save you money in the long run, as you can often get better value for your money when purchasing components separately. Furthermore, building your own computer can be a fun and rewarding experience, as you get to learn about the inner workings of computers and see your creation come to life. Our company can help you navigate the process, providing expert guidance and support to ensure that your custom-built computer is a success.               </p>
+         <div id="faq-accordion">
+            <div class="faq-section">
+              <div class="faq-question">Q: What is the difference between hardware and software?<span class="faq-indicator">+</span></div>
+              <div class="faq-answer">A: Hardware refers to the physical components of a computer, such as the CPU, memory, and storage. Software refers to the programs and operating system that run on a computer.</div>
+            </div>
+            <div class="faq-section">
+              <div class="faq-question">Q: What is an operating system?<span class="faq-indicator">+</span></div>
+              <div class="faq-answer">A: An operating system is a program that manages the resources of a computer and provides a platform for other software to run. Examples include Windows, MacOS, and Linux.</div>
+            </div>
+            <div class="faq-section">
+               <div class="faq-question">Q: How do I know if my computer has enough memory or storage?<span class="faq-indicator">+</span></div>
+               <div class="faq-answer">A: You can check the amount of memory and storage your computer has by opening the system settings or control panel.</div>
+             </div>
+          <div class="faq-section">
+            <div class="faq-question">Q: How can I improve my computer's performance?<span class="faq-indicator">+</span></div>
+            <div class="faq-answer">A: You can improve your computer's performance by closing unnecessary programs, running disk cleanup and disk defragmenter, and uninstalling unused software.</div>
+          </div>
+          <div class="faq-section">
+            <div class="faq-question">Q: Can I upgrade my computer's hardware?<span class="faq-indicator">+</span></div>
+            <div class="faq-answer">A: It depends on the specific components of your computer, but many parts can be upgraded such as memory, storage, and graphics card.</div>
+          </div>
+          <div class="faq-section">
+            <div class="faq-question">Q: How do I troubleshoot a problem with my computer?<span class="faq-indicator">+</span></div>
+            <div class="faq-answer">A: To troubleshoot a problem with your computer, start by checking for error messages, searching online for solutions, and restarting your computer.</div>
+          </div>
+          <div class="faq-section">
+              <div class="faq-question">Q: How do I dispose of old computer hardware?<span class="faq-indicator">+</span></div>
+              <div class="faq-answer">A: It is important to properly dispose of old computer hardware to protect the environment and prevent personal data from being compromised. Contact your local government or electronics recycling program for instructions on how to dispose of old computer hardware.</div>
             </div>
          </div>
 
@@ -188,5 +210,34 @@
          });	
           
       </script> 
+         <script>
+var faqAccordion = document.getElementById("faq-accordion");
+faqAccordion.addEventListener("click", function(e) {
+  if (e.target.classList.contains("faq-question")) {
+    var answer = e.target.nextElementSibling;
+    var indicator = e.target.querySelector(".faq-indicator");
+    if (answer.classList.contains("open")) {
+      requestAnimationFrame(() => {
+        answer.style.maxHeight = "0";
+        indicator.textContent = "+";
+        setTimeout(()=>{
+          answer.classList.remove("open");
+        },50);
+      });
+    } else {
+      answer.classList.add("open");
+      indicator.textContent = "-";
+      setTimeout(() => {
+        requestAnimationFrame(() => {
+          answer.style.maxHeight = "500px";
+        });
+      }, 50);
+    }
+  }
+});
+
+
+
+   </script>      
       </body>
       </html>

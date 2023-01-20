@@ -4,6 +4,15 @@
  * Copyright 2018, Vision Design - graphic zoo
  * Free to use under the MIT license.
 */
+/* FAQ Accordion  
+var faqAccordion = document.getElementById("faq-accordion");
+faqAccordion.addEventListener("click", function(e) {
+  if (e.target.classList.contains("faq-question")) {
+    var answer = e.target.nextElementSibling;
+    answer.classList.toggle("open");
+  }
+}); */
+
 
 /* Observer Code */ 
 let observer = new IntersectionObserver(entries => {

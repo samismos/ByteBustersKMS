@@ -4,6 +4,67 @@
  * Copyright 2018, Vision Design - graphic zoo
  * Free to use under the MIT license.
 */
+#faq-accordion {
+  width: 50%; /* or any other width */
+  background-color: white;
+  margin: auto;
+}
+
+.faq-section {
+  background-color: #3d08c2; /* purple */
+  background-image: radial-gradient(#260579,#3d08c2);
+  border: solid 2px white;
+  color: #fff;
+}
+
+.faq-question {
+  cursor: pointer;
+  padding: 20px;
+  font-weight: 650;
+}
+
+.faq-answer {
+  padding: 20px;
+  max-height: 0;
+  overflow: hidden;
+  display: none;
+  animation: slideDown 0.8s linear;
+  
+}
+.faq-indicator {
+  float: right;
+  margin-right:15px;
+  font-size: 25px;
+}
+
+.faq-answer.open + .faq-question .faq-indicator {
+  content: '-';
+}
+
+
+.faq-answer.open {
+  max-height: 500px; /* or any other max-height */
+  display: block;
+}
+
+@keyframes slideDown {
+  from {
+  max-height: 0;
+ }
+  to { 
+  max-height: 500px;
+ }
+}
+@keyframes slideUp {
+  from {
+  max-height: 500px;
+  
+ }
+  to {
+  max-height: 0;
+  
+ }
+}
 
 .parts-fade {
   opacity: 0;
