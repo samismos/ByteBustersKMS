@@ -19,10 +19,10 @@ let observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.intersectionRatio > 0) {
       // element is visible, start the fade in animation
-      gsap.to(entry.target, {duration: 2, opacity: 1, scale: 1});
+      gsap.to(entry.target, {duration: 1.2, opacity: 1, scale: 1});
     } else {
       // element is not visible, start the fade out animation
-      gsap.to(entry.target, {duration: 2, opacity: 0, scale: 0.7});
+      gsap.to(entry.target, {duration: 1.2, opacity: 0, scale: 0.7});
     }
   });
 });
